@@ -30,7 +30,7 @@ class MenuController extends Controller
     {
         $decodedCategory = urldecode($category);
 
-        if (! in_array($decodedCategory, ['Makanan Berat', 'Minuman', 'Snack'], true)) {
+        if (!in_array($decodedCategory, ['Makanan Berat', 'Minuman', 'Snack'], true)) {
             return $this->success([], 'Kategori tidak ditemukan');
         }
 
@@ -68,8 +68,17 @@ class MenuController extends Controller
         return $this->success($menuItem->fresh(), 'Stok berhasil diperbarui');
     }
 
-    public function destroy(MenuItem $menuItem): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $menuItem = MenuItem::find($id);
+
+        if (!$menuItem) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Menu tidak ditemukan',
+            ], 404);
+        }
+
         $menuItem->delete();
 
         return $this->success(null, 'Menu berhasil dihapus');

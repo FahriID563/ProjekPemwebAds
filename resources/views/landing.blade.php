@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Warung Kenyang Selalu - Sistem Pemesanan Makanan Terjadwal. Pesan makanan favorit Anda secara online, tanpa antri!">
     <title>Warung Kenyang Selalu - Sistem Pemesanan Makanan</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-warning" href="{{ route('landing') }}">
+            <a class="navbar-brand" href="{{ route('landing') }}">
                 <i class="fas fa-utensils"></i> Warung Kenyang Selalu
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" href="#tentang">Tentang</a>
                     </li>
@@ -29,14 +37,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#fitur">Fitur</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ms-lg-3">
                         @auth
-                            <a class="nav-link btn btn-warning text-white ms-2 px-4" href="{{ route('dashboard') }}">
-                                <i class="fas fa-table"></i> Dashboard
+                            <a class="btn btn-primary" href="{{ route('dashboard') }}">
+                                <i class="fas fa-th-large me-1"></i> Dashboard
                             </a>
                         @else
-                            <a class="nav-link btn btn-warning text-white ms-2 px-4" href="{{ route('login') }}">
-                                <i class="fas fa-sign-in-alt"></i> Login
+                            <a class="btn btn-primary" href="{{ route('login') }}">
+                                <i class="fas fa-sign-in-alt me-1"></i> Login
                             </a>
                         @endauth
                     </li>
@@ -45,67 +53,66 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero-section">
+        <!-- Floating Food Elements -->
+        <div class="floating-element" style="top: 15%; right: 15%;">
+            <span class="food-emoji">🍜</span>
+        </div>
+        <div class="floating-element" style="top: 60%; right: 8%;">
+            <span class="food-emoji">🍛</span>
+        </div>
+        <div class="floating-element" style="bottom: 25%; left: 8%;">
+            <span class="food-emoji">🥗</span>
+        </div>
+
         <div class="container">
             <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6">
-                    <h1 class="display-3 fw-bold mb-4">Pesan Makanan Favorit Anda</h1>
-                    <p class="lead mb-4">Tanpa Antri, Tanpa Ribet. Pesan Sekarang, Ambil Nanti!</p>
-                    <div class="d-flex gap-3">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-4 fw-bold mb-4">
+                        Pesan Makanan<br>
+                        <span>Favorit Anda</span>
+                    </h1>
+                    <p class="lead">
+                        Tanpa antri, tanpa ribet. Pesan sekarang, ambil nanti!
+                        Nikmati kemudahan pemesanan makanan online di Warung Kenyang Selalu.
+                    </p>
+
+                    <div class="hero-badges">
+                        <span class="hero-badge">
+                            <i class="fas fa-clock"></i> Buka 08:00 - 20:00
+                        </span>
+                        <span class="hero-badge">
+                            <i class="fas fa-map-marker-alt"></i> Purbalingga
+                        </span>
+                        <span class="hero-badge">
+                            <i class="fas fa-star"></i> 4.9 Rating
+                        </span>
+                    </div>
+
+                    <div class="hero-cta">
                         @auth
-                            <a href="{{ route('dashboard') }}" class="btn btn-warning btn-lg px-5">
-                                <i class="fas fa-table"></i> Buka Dashboard
+                            <a href="{{ route('dashboard') }}" class="btn btn-primary btn-lg">
+                                <i class="fas fa-utensils me-2"></i> Buka Dashboard
                             </a>
                         @else
-                            <a href="{{ route('register') }}" class="btn btn-warning btn-lg px-5">
-                                <i class="fas fa-user-plus"></i> Daftar Sekarang
+                            <a href="{{ route('register') }}" class="btn btn-primary btn-lg">
+                                <i class="fas fa-user-plus me-2"></i> Daftar Sekarang
                             </a>
-                            <a href="{{ route('login') }}" class="btn btn-outline-warning btn-lg px-5">
-                                <i class="fas fa-sign-in-alt"></i> Login
+                            <a href="{{ route('login') }}" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-sign-in-alt me-2"></i> Login
                             </a>
                         @endauth
                     </div>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="{{ asset('assets/images/hero-food.png') }}" alt="Food" class="img-fluid" style="max-height: 500px;" onerror="this.onerror=null;this.src='https://placehold.co/500x400?text=Menu';">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tentang" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="fw-bold">Tentang Warung Kenyang Selalu</h2>
-                    <p class="text-muted">Warung makan yang mengutamakan kepuasan pelanggan</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <i class="fas fa-clock fa-3x text-warning mb-3"></i>
-                            <h5 class="fw-bold">Buka Setiap Hari</h5>
-                            <p class="text-muted">Senin - Minggu<br>08:00 - 20:00 WIB</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <i class="fas fa-map-marker-alt fa-3x text-warning mb-3"></i>
-                            <h5 class="fw-bold">Lokasi Strategis</h5>
-                            <p class="text-muted">Purbalingga, Jawa Tengah<br>Dekat kampus & perkantoran</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <i class="fas fa-star fa-3x text-warning mb-3"></i>
-                            <h5 class="fw-bold">Kualitas Terjamin</h5>
-                            <p class="text-muted">Menu bervariasi dengan<br>bahan berkualitas</p>
+                <div class="col-lg-6 text-center hero-image">
+                    <img src="{{ asset('assets/images/hero-food.png') }}" alt="Delicious Food"
+                        style="max-height: 500px;"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="d-none justify-content-center align-items-center" style="height: 400px;">
+                        <div class="text-center">
+                            <div style="font-size: 8rem;">🍽️</div>
+                            <p class="text-muted mt-3">Menu Lezat Menanti Anda!</p>
                         </div>
                     </div>
                 </div>
@@ -113,13 +120,46 @@
         </div>
     </section>
 
-    <section id="fitur" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="fw-bold">Keunggulan Sistem Kami</h2>
-                    <p class="text-muted">Kemudahan dalam memesan makanan</p>
+    <!-- About Section -->
+    <section id="tentang" class="py-5">
+        <div class="container py-4">
+            <div class="section-title">
+                <h2>Tentang <span>Warung Kenyang Selalu</span></h2>
+                <p>Warung makan yang mengutamakan kepuasan pelanggan</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="info-card animate-fade-in">
+                        <i class="fas fa-clock"></i>
+                        <h5>Buka Setiap Hari</h5>
+                        <p>Senin - Minggu<br>08:00 - 20:00 WIB</p>
+                    </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="info-card animate-fade-in animate-delay-1">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h5>Lokasi Strategis</h5>
+                        <p>Purbalingga, Jawa Tengah<br>Dekat kampus & perkantoran</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card animate-fade-in animate-delay-2">
+                        <i class="fas fa-star"></i>
+                        <h5>Kualitas Terjamin</h5>
+                        <p>Menu bervariasi dengan<br>bahan berkualitas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="fitur" class="py-5"
+        style="background: linear-gradient(180deg, var(--light-color) 0%, var(--light-secondary) 100%);">
+        <div class="container py-4">
+            <div class="section-title">
+                <h2>Keunggulan <span>Sistem Kami</span></h2>
+                <p>Kemudahan dalam memesan makanan</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -127,8 +167,8 @@
                         <div class="feature-icon">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
-                        <h5 class="fw-bold mt-3">Pemesanan Terjadwal</h5>
-                        <p class="text-muted">Pilih waktu pengambilan sesuai jadwal Anda. Tidak perlu menunggu lama!</p>
+                        <h5>Pemesanan Terjadwal</h5>
+                        <p>Pilih waktu pengambilan sesuai jadwal Anda. Tidak perlu menunggu lama!</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -136,8 +176,8 @@
                         <div class="feature-icon">
                             <i class="fas fa-credit-card"></i>
                         </div>
-                        <h5 class="fw-bold mt-3">Pembayaran Fleksibel</h5>
-                        <p class="text-muted">Bayar tunai atau digital (QRIS, Dana, GoPay) saat pengambilan pesanan.</p>
+                        <h5>Pembayaran Fleksibel</h5>
+                        <p>Bayar tunai atau digital (QRIS, Dana, GoPay) saat pengambilan pesanan.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -145,26 +185,26 @@
                         <div class="feature-icon">
                             <i class="fas fa-bell"></i>
                         </div>
-                        <h5 class="fw-bold mt-3">Notifikasi Real-time</h5>
-                        <p class="text-muted">Dapatkan update status pesanan langsung ke email Anda.</p>
+                        <h5>Notifikasi Real-time</h5>
+                        <p>Dapatkan update status pesanan langsung ke email Anda.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-boxes"></i>
+                            <i class="fas fa-boxes-stacked"></i>
                         </div>
-                        <h5 class="fw-bold mt-3">Stok Real-time</h5>
-                        <p class="text-muted">Lihat ketersediaan menu secara langsung sebelum memesan.</p>
+                        <h5>Stok Real-time</h5>
+                        <p>Lihat ketersediaan menu secara langsung sebelum memesan.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
+                            <i class="fas fa-mobile-screen"></i>
                         </div>
-                        <h5 class="fw-bold mt-3">Responsive Design</h5>
-                        <p class="text-muted">Akses mudah dari smartphone, tablet, atau komputer.</p>
+                        <h5>Responsive Design</h5>
+                        <p>Akses mudah dari smartphone, tablet, atau komputer.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -172,40 +212,49 @@
                         <div class="feature-icon">
                             <i class="fas fa-clock"></i>
                         </div>
-                        <h5 class="fw-bold mt-3">Hemat Waktu</h5>
-                        <p class="text-muted">Tidak perlu antri panjang. Pesan online, ambil langsung!</p>
+                        <h5>Hemat Waktu</h5>
+                        <p>Tidak perlu antri panjang. Pesan online, ambil langsung!</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="menu" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="fw-bold">Menu Populer Kami</h2>
-                    <p class="text-muted">Pilihan menu yang lezat dan berkualitas</p>
-                </div>
+    <!-- Menu Section -->
+    <section id="menu" class="py-5">
+        <div class="container py-4">
+            <div class="section-title">
+                <h2>Menu <span>Populer Kami</span></h2>
+                <p>Pilihan menu yang lezat dan berkualitas</p>
             </div>
             <div class="row g-4">
                 @forelse ($menuPreview as $menu)
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm menu-card">
+                        <div class="menu-card card h-100 border-0">
                             <div class="card-body text-center">
-                                <div class="menu-image mb-3">
-                                    <i class="fas fa-utensils fa-3x text-warning"></i>
+                                <div class="menu-image">
+                                    @if($menu->image_url)
+                                        <img src="{{ $menu->image_url }}" alt="{{ $menu->menu_name }}"
+                                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"
+                                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                        <i class="fas fa-utensils" style="display:none;"></i>
+                                    @else
+                                        <i class="fas fa-utensils"></i>
+                                    @endif
                                 </div>
-                                <h5 class="fw-bold">{{ $menu->menu_name }}</h5>
-                                <p class="text-muted small">{{ $menu->description }}</p>
-                                <p class="text-warning fw-bold fs-5">Rp {{ number_format($menu->price, 0, ',', '.') }}</p>
-                                <span class="badge bg-success">Stok: {{ $menu->stock }}</span>
+                                <h5 class="mt-3">{{ $menu->menu_name }}</h5>
+                                <p class="description text-muted">{{ $menu->description }}</p>
+                                <p class="menu-price mb-2">Rp {{ number_format($menu->price, 0, ',', '.') }}</p>
+                                <span class="badge">
+                                    <i class="fas fa-check-circle me-1"></i> Stok: {{ $menu->stock }}
+                                </span>
                             </div>
                         </div>
                     </div>
                 @empty
                     <div class="col-12">
                         <div class="alert alert-warning text-center">
+                            <i class="fas fa-info-circle me-2"></i>
                             Menu belum tersedia. Silakan cek kembali nanti.
                         </div>
                     </div>
@@ -213,75 +262,133 @@
             </div>
             <div class="text-center mt-5">
                 @auth
-                    <a href="{{ route('dashboard') }}" class="btn btn-warning btn-lg px-5">
-                        <i class="fas fa-cart-shopping"></i> Kelola Pesanan
+                    <a href="{{ route('dashboard') }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-shopping-cart me-2"></i> Kelola Pesanan
                     </a>
                 @else
-                    <a href="{{ route('login') }}" class="btn btn-warning btn-lg px-5">
-                        <i class="fas fa-shopping-cart"></i> Login untuk Memesan
+                    <a href="{{ route('login') }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-shopping-cart me-2"></i> Login untuk Memesan
                     </a>
                 @endauth
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-warning text-white">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-4">Siap Memesan Makanan?</h2>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center position-relative">
+            <h2 class="mb-4">Siap Memesan Makanan?</h2>
             <p class="lead mb-4">Daftar sekarang dan nikmati kemudahan pemesanan online!</p>
             @auth
-                <a href="{{ route('dashboard') }}" class="btn btn-light btn-lg px-5">
-                    <i class="fas fa-table"></i> Buka Dashboard
+                <a href="{{ route('dashboard') }}" class="btn btn-light btn-lg">
+                    <i class="fas fa-th-large me-2"></i> Buka Dashboard
                 </a>
             @else
-                <a href="{{ route('register') }}" class="btn btn-light btn-lg px-5">
-                    <i class="fas fa-user-plus"></i> Daftar Gratis
+                <a href="{{ route('register') }}" class="btn btn-light btn-lg">
+                    <i class="fas fa-user-plus me-2"></i> Daftar Gratis
                 </a>
             @endauth
         </div>
     </section>
 
-    <footer class="bg-dark text-white py-4">
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h5 class="fw-bold mb-3">
-                        <i class="fas fa-utensils"></i> Warung Kenyang Selalu
+                <div class="col-md-5 mb-4 mb-md-0">
+                    <h5>
+                        <i class="fas fa-utensils me-2"></i>Warung Kenyang Selalu
                     </h5>
-                    <p class="text-muted">Sistem Informasi Pemesanan Makanan Terjadwal</p>
-                    <p class="text-muted small">
-                        <i class="fas fa-map-marker-alt"></i> Purbalingga, Jawa Tengah<br>
-                        <i class="fas fa-phone"></i> 0812-3456-7890<br>
-                        <i class="fas fa-envelope"></i> info@warungkenyang.com
-                    </p>
+                    <p class="text-white-50 mb-4">Sistem Informasi Pemesanan Makanan Terjadwal</p>
+                    <div class="d-flex flex-column gap-2">
+                        <span class="text-white-50">
+                            <i class="fas fa-map-marker-alt me-2 text-warning"></i> Purbalingga, Jawa Tengah
+                        </span>
+                        <span class="text-white-50">
+                            <i class="fas fa-phone me-2 text-warning"></i> 0812-3456-7890
+                        </span>
+                        <span class="text-white-50">
+                            <i class="fas fa-envelope me-2 text-warning"></i> info@warungkenyang.com
+                        </span>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <h6 class="fw-bold mb-3">Menu</h6>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h6 class="text-white">Navigasi</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#tentang" class="text-muted text-decoration-none">Tentang</a></li>
-                        <li><a href="#menu" class="text-muted text-decoration-none">Menu</a></li>
-                        <li><a href="#fitur" class="text-muted text-decoration-none">Fitur</a></li>
-                        <li><a href="{{ route('login') }}" class="text-muted text-decoration-none">Login</a></li>
+                        <li class="mb-2"><a href="#tentang">Tentang Kami</a></li>
+                        <li class="mb-2"><a href="#menu">Menu</a></li>
+                        <li class="mb-2"><a href="#fitur">Fitur</a></li>
+                        <li class="mb-2"><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Daftar</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h6 class="fw-bold mb-3">Ikuti Kami</h6>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-white"><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-whatsapp fa-2x"></i></a>
+                <div class="col-md-4">
+                    <h6 class="text-white">Ikuti Kami</h6>
+                    <p class="text-white-50 small mb-3">Dapatkan update menu terbaru dan promo menarik!</p>
+                    <div class="social-links d-flex gap-2">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
-            <hr class="bg-secondary">
-            <div class="text-center">
-                <p class="mb-0 small">&copy; {{ now()->year }} Warung Kenyang Selalu. All Rights Reserved.</p>
-                <p class="mb-0 small text-muted">Developed by Kelompok 9 - Pemrograman Web 1</p>
+            <hr>
+            <div class="footer-bottom">
+                <p>&copy; {{ now()->year }} Warung Kenyang Selalu. All Rights Reserved.</p>
+                <p class="small text-white-50">Developed by Kelompok 9 - Pemrograman Web 1</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .info-card, .menu-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
