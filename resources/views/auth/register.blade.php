@@ -13,6 +13,128 @@
         body {
             padding-top: 0;
         }
+
+        /* ========== MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .auth-container {
+                padding: 0.75rem;
+                min-height: 100vh;
+            }
+
+            .auth-card {
+                max-width: 100% !important;
+                margin: 0;
+                border-radius: 16px;
+            }
+
+            .auth-header {
+                padding: 1rem;
+            }
+
+            .auth-header i {
+                font-size: 1.5rem;
+            }
+
+            .auth-header h2 {
+                font-size: 1rem;
+            }
+
+            .auth-header p {
+                font-size: 0.75rem;
+            }
+
+            .auth-body {
+                padding: 1rem;
+            }
+
+            .mb-3 {
+                margin-bottom: 0.5rem !important;
+            }
+
+            .mb-4 {
+                margin-bottom: 0.75rem !important;
+            }
+
+            .form-label {
+                font-size: 0.8rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .form-label i {
+                font-size: 0.8rem;
+            }
+
+            .form-control {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.6rem;
+            }
+
+            .form-check-label {
+                font-size: 0.8rem;
+            }
+
+            small.text-muted {
+                font-size: 0.7rem;
+            }
+
+            .btn-primary {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.85rem;
+            }
+
+            .text-center p {
+                font-size: 0.8rem;
+            }
+
+            .text-center a {
+                font-size: 0.85rem;
+            }
+
+            .input-group .btn {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .auth-container {
+                padding: 0.5rem;
+            }
+
+            .auth-header {
+                padding: 0.75rem;
+            }
+
+            .auth-header i {
+                font-size: 1.25rem;
+            }
+
+            .auth-header h2 {
+                font-size: 0.9rem;
+            }
+
+            .auth-body {
+                padding: 0.75rem;
+            }
+
+            .form-label {
+                font-size: 0.75rem;
+            }
+
+            .form-control {
+                font-size: 0.8rem;
+                padding: 0.35rem 0.5rem;
+            }
+
+            .row .col-md-6 {
+                margin-bottom: 0.25rem;
+            }
+
+            .btn-primary {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 

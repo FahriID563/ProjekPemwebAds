@@ -244,6 +244,215 @@
                 opacity: 0.5;
             }
         }
+
+        /* ========== MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 0;
+            }
+
+            .kitchen-header {
+                padding: 0.5rem 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .kitchen-header h4 {
+                font-size: 0.85rem;
+            }
+
+            .kitchen-header small {
+                font-size: 0.6rem;
+            }
+
+            .kitchen-header .d-flex {
+                flex-wrap: wrap;
+                gap: 0.35rem !important;
+            }
+
+            .kitchen-header div[style*="font-size: 2rem"] {
+                font-size: 1.25rem !important;
+            }
+
+            .container-fluid {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+
+            .refresh-badge {
+                font-size: 0.55rem;
+                padding: 0.15rem 0.35rem;
+            }
+
+            .row.mb-4 {
+                margin-bottom: 0.5rem !important;
+            }
+
+            .row.g-3 {
+                --bs-gutter-y: 0.35rem;
+                --bs-gutter-x: 0.35rem;
+            }
+
+            .stats-card {
+                padding: 0.5rem;
+            }
+
+            .stats-card h3 {
+                font-size: 0.95rem;
+            }
+
+            .stats-card .small {
+                font-size: 0.6rem;
+            }
+
+            .stats-card .stats-icon {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 0.8rem !important;
+            }
+
+            .status-tabs {
+                padding: 0.2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .status-tabs .nav {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .status-tabs .nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            .status-tabs .nav-link {
+                padding: 0.35rem 0.5rem;
+                font-size: 0.7rem;
+                white-space: nowrap;
+            }
+
+            .order-card {
+                margin-bottom: 0.35rem;
+            }
+
+            .order-card-header {
+                padding: 0.5rem 0.6rem;
+            }
+
+            .order-code {
+                font-size: 0.85rem;
+            }
+
+            .order-card-body {
+                padding: 0.6rem;
+            }
+
+            .order-items {
+                max-height: 80px;
+            }
+
+            .order-item {
+                font-size: 0.75rem;
+                padding: 0.2rem 0;
+            }
+
+            .order-total {
+                padding: 0.5rem 0.6rem;
+            }
+
+            .order-total .h5 {
+                font-size: 0.85rem;
+            }
+
+            .action-btn {
+                padding: 0.5rem;
+                font-size: 0.75rem;
+            }
+
+            .empty-state {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .empty-state-icon {
+                font-size: 2.5rem;
+            }
+
+            .empty-state h5 {
+                font-size: 0.9rem;
+            }
+
+            .empty-state p {
+                font-size: 0.75rem;
+            }
+
+            .avatar-circle {
+                width: 26px;
+                height: 26px;
+                font-size: 0.7rem;
+            }
+
+            .btn-outline-primary.btn-sm {
+                padding: 0.2rem 0.4rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .kitchen-header h4 {
+                font-size: 0.75rem;
+            }
+
+            .kitchen-header div[style*="font-size: 2rem"] {
+                font-size: 1rem !important;
+            }
+
+            .kitchen-header>.container-fluid>.d-flex {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 0.35rem !important;
+            }
+
+            .kitchen-header>.container-fluid>.d-flex>.d-flex:last-child {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .stats-card {
+                padding: 0.4rem;
+            }
+
+            .stats-card h3 {
+                font-size: 0.85rem;
+            }
+
+            .stats-card .stats-icon {
+                width: 24px !important;
+                height: 24px !important;
+                font-size: 0.7rem !important;
+            }
+
+            .order-card-header {
+                padding: 0.4rem 0.5rem;
+            }
+
+            .order-code {
+                font-size: 0.75rem;
+            }
+
+            .order-card-body {
+                padding: 0.5rem;
+            }
+
+            .order-item {
+                font-size: 0.7rem;
+            }
+
+            .action-btn {
+                padding: 0.4rem;
+                font-size: 0.7rem;
+            }
+        }
     </style>
 </head>
 
@@ -342,45 +551,96 @@
             </div>
         </div>
 
-        <!-- Filter Tabs -->
-        <div class="status-tabs">
-            <ul class="nav nav-pills flex-nowrap overflow-auto" id="statusFilter">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#" data-filter="all">
-                        <i class="fas fa-list me-1"></i> Semua Aktif
-                    </a>
+        <!-- Main Tabs: Pesanan & Menu -->
+        <div class="status-tabs mb-3">
+            <ul class="nav nav-pills" id="mainTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="orders-tab" data-bs-toggle="tab" data-bs-target="#ordersPane"
+                        type="button" role="tab">
+                        <i class="fas fa-receipt me-1"></i> Pesanan
+                    </button>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-filter="pending">
-                        <i class="fas fa-clock me-1"></i> Menunggu
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-filter="processing">
-                        <i class="fas fa-fire me-1"></i> Dimasak
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-filter="ready">
-                        <i class="fas fa-check me-1"></i> Siap Diambil
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-filter="completed">
-                        <i class="fas fa-receipt me-1"></i> Sudah Bayar
-                    </a>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="menu-tab" data-bs-toggle="tab" data-bs-target="#menuPane" type="button"
+                        role="tab">
+                        <i class="fas fa-utensils me-1"></i> Daftar Menu
+                    </button>
                 </li>
             </ul>
         </div>
 
-        <!-- Orders Grid -->
-        <div class="row g-4" id="ordersContainer">
-            <div class="col-12 text-center py-5">
-                <div class="spinner"></div>
-                <p class="text-muted mt-3">Memuat pesanan...</p>
+        <!-- Tab Content -->
+        <div class="tab-content" id="mainTabContent">
+            <!-- Pesanan Tab -->
+            <div class="tab-pane fade show active" id="ordersPane" role="tabpanel">
+                <!-- Filter Tabs -->
+                <div class="status-tabs">
+                    <ul class="nav nav-pills flex-nowrap overflow-auto" id="statusFilter">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" data-filter="all">
+                                <i class="fas fa-list me-1"></i> Semua Aktif
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-filter="pending">
+                                <i class="fas fa-clock me-1"></i> Menunggu
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-filter="processing">
+                                <i class="fas fa-fire me-1"></i> Dimasak
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-filter="ready">
+                                <i class="fas fa-check me-1"></i> Siap Diambil
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-filter="completed">
+                                <i class="fas fa-receipt me-1"></i> Sudah Bayar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Orders Grid -->
+                <div class="row g-4" id="ordersContainer">
+                    <div class="col-12 text-center py-5">
+                        <div class="spinner"></div>
+                        <p class="text-muted mt-3">Memuat pesanan...</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+
+            <!-- Menu Tab -->
+            <div class="tab-pane fade" id="menuPane" role="tabpanel">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="fas fa-utensils me-2 text-primary"></i> Daftar Menu yang Dijual
+                        </h5>
+                        <div class="d-flex gap-2">
+                            <select class="form-select form-select-sm" id="menuCategoryFilter" style="width: auto;">
+                                <option value="all">Semua Kategori</option>
+                                <option value="Makanan Berat">Makanan Berat</option>
+                                <option value="Minuman">Minuman</option>
+                                <option value="Snack">Snack</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3" id="menuGrid">
+                            <div class="col-12 text-center py-4">
+                                <div class="spinner"></div>
+                                <p class="text-muted mt-2">Memuat menu...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End tab-content -->
+    </div> <!-- End container-fluid -->
 
     <!-- Payment Modal -->
     <div class="modal fade" id="paymentModal" tabindex="-1">
@@ -472,7 +732,30 @@
                     renderOrders();
                 });
             });
+
+            // Setup menu tab and filter
+            setupMenuTab();
         });
+
+        function setupMenuTab() {
+            // Load menu when menu tab is clicked
+            const menuTab = document.getElementById('menu-tab');
+            if (menuTab) {
+                menuTab.addEventListener('shown.bs.tab', function () {
+                    if (allMenuItems.length === 0) {
+                        loadMenuItems();
+                    }
+                });
+            }
+
+            // Category filter
+            const categoryFilter = document.getElementById('menuCategoryFilter');
+            if (categoryFilter) {
+                categoryFilter.addEventListener('change', function () {
+                    renderMenuItems(this.value);
+                });
+            }
+        }
 
         async function loadOrders() {
             try {
@@ -703,6 +986,82 @@
                     </div>
                 </div>
             `;
+        }
+
+        // ========== MENU FUNCTIONS ==========
+        let allMenuItems = [];
+
+        async function loadMenuItems() {
+            try {
+                const response = await fetch('/api/menu');
+                const data = await response.json();
+
+                if (data.success) {
+                    allMenuItems = data.data;
+                    renderMenuItems('all');
+                }
+            } catch (error) {
+                console.error('Error loading menu:', error);
+                document.getElementById('menuGrid').innerHTML = `
+                            <div class="col-12 text-center py-4">
+                                <i class="fas fa-exclamation-triangle text-danger" style="font-size: 2rem;"></i>
+                                <p class="text-muted mt-2">Gagal memuat menu</p>
+                            </div>
+                        `;
+            }
+        }
+
+        function renderMenuItems(category) {
+            const grid = document.getElementById('menuGrid');
+            let filteredMenu = allMenuItems;
+
+            if (category !== 'all') {
+                filteredMenu = allMenuItems.filter(item => item.category === category);
+            }
+
+            if (filteredMenu.length === 0) {
+                grid.innerHTML = `
+                            <div class="col-12 text-center py-4">
+                                <i class="fas fa-utensils text-muted" style="font-size: 2rem;"></i>
+                                <p class="text-muted mt-2">Tidak ada menu dalam kategori ini</p>
+                            </div>
+                        `;
+                return;
+            }
+
+            grid.innerHTML = filteredMenu.map(item => {
+                const stockClass = item.stock > 10 ? 'success' : item.stock > 0 ? 'warning' : 'danger';
+                const stockLabel = item.stock > 0 ? `Stok: ${item.stock}` : 'Habis';
+
+                const imageDisplay = item.image_url
+                    ? `<img src="${item.image_url}" alt="${item.menu_name}" 
+                                   style="width: 60px; height: 60px; object-fit: cover; border-radius: 10px;"
+                                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                               <div class="menu-thumb-placeholder" style="width: 60px; height: 60px; display:none; background: var(--light-secondary); border-radius: 10px; align-items: center; justify-content: center;">
+                                   <i class="fas fa-utensils text-muted"></i>
+                               </div>`
+                    : `<div class="menu-thumb-placeholder" style="width: 60px; height: 60px; background: var(--light-secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                   <i class="fas fa-utensils text-muted"></i>
+                               </div>`;
+
+                return `
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body text-center p-2">
+                                        <div class="mb-2 d-flex justify-content-center">
+                                            ${imageDisplay}
+                                        </div>
+                                        <h6 class="fw-bold mb-1" style="font-size: 0.85rem;">${item.menu_name}</h6>
+                                        <p class="text-primary fw-bold mb-1" style="font-size: 0.9rem;">${formatRupiah(item.price)}</p>
+                                        <div class="d-flex justify-content-center gap-1 flex-wrap">
+                                            <span class="badge bg-${stockClass}" style="font-size: 0.65rem;">${stockLabel}</span>
+                                            <span class="badge bg-secondary" style="font-size: 0.65rem;">${item.category}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+            }).join('');
         }
     </script>
 </body>

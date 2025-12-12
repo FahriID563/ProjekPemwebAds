@@ -11,6 +11,253 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <style>
+        /* ========== LANDING PAGE MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar {
+                padding: 0.4rem 0;
+            }
+
+            .navbar-brand {
+                font-size: 0.9rem;
+            }
+
+            .navbar-toggler {
+                border: none;
+                padding: 0.2rem 0.4rem;
+                font-size: 0.8rem;
+            }
+
+            .hero-section {
+                padding: 10px 0 30px;
+            }
+
+            .hero-section .row {
+                min-height: auto !important;
+            }
+
+            .hero-section h1 {
+                font-size: 1.4rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .hero-section .lead {
+                font-size: 0.85rem;
+                margin-bottom: 1rem;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            .hero-badges {
+                gap: 0.35rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-badge {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.65rem;
+            }
+
+            .hero-cta {
+                gap: 0.5rem;
+            }
+
+            .hero-cta .btn {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .hero-image {
+                margin-top: 1.5rem;
+            }
+
+            .hero-image img {
+                max-height: 180px;
+            }
+
+            .section-title {
+                margin-bottom: 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.2rem;
+            }
+
+            .section-title p {
+                font-size: 0.8rem;
+            }
+
+            .py-5 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+
+            .container.py-4 {
+                padding-top: 0.5rem !important;
+                padding-bottom: 0.5rem !important;
+            }
+
+            .feature-card,
+            .info-card {
+                padding: 1rem;
+            }
+
+            .feature-card h5,
+            .info-card h5 {
+                font-size: 0.9rem;
+            }
+
+            .feature-card p,
+            .info-card p {
+                font-size: 0.8rem;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .menu-card .card-body {
+                padding: 1rem;
+            }
+
+            .menu-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .menu-card h5 {
+                font-size: 0.9rem;
+            }
+
+            .menu-price {
+                font-size: 1rem;
+            }
+
+            .menu-card .badge {
+                font-size: 0.7rem;
+            }
+
+            .cta-section {
+                padding: 2rem 0;
+            }
+
+            .cta-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .cta-section p {
+                font-size: 0.85rem;
+            }
+
+            .cta-section .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            footer {
+                padding: 1.5rem 0 0.75rem;
+            }
+
+            footer h5 {
+                font-size: 1rem;
+            }
+
+            footer h6 {
+                font-size: 0.85rem;
+            }
+
+            footer p,
+            footer span {
+                font-size: 0.8rem;
+            }
+
+            footer .social-links a {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.7rem;
+            }
+
+            .row.g-4 {
+                --bs-gutter-y: 0.75rem;
+                --bs-gutter-x: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 55px;
+            }
+
+            .navbar-brand {
+                font-size: 0.8rem;
+            }
+
+            .hero-section h1 {
+                font-size: 1.2rem;
+            }
+
+            .hero-section .lead {
+                font-size: 0.8rem;
+            }
+
+            .hero-badge {
+                font-size: 0.6rem;
+                padding: 0.25rem 0.4rem;
+            }
+
+            .hero-cta .btn {
+                padding: 0.35rem 0.6rem;
+                font-size: 0.75rem;
+            }
+
+            .hero-image img {
+                max-height: 150px;
+            }
+
+            .section-title h2 {
+                font-size: 1.1rem;
+            }
+
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .feature-card,
+            .info-card {
+                padding: 0.75rem;
+            }
+
+            .menu-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            footer .row {
+                text-align: center;
+            }
+
+            footer .col-md-5,
+            footer .col-md-3,
+            footer .col-md-4 {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -183,10 +430,10 @@
                 <div class="col-md-4">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-bell"></i>
+                            <i class="fas fa-history"></i>
                         </div>
-                        <h5>Notifikasi Real-time</h5>
-                        <p>Dapatkan update status pesanan langsung ke email Anda.</p>
+                        <h5>Riwayat Pesanan</h5>
+                        <p>Lihat semua riwayat pesanan Anda kapan saja dari dashboard pribadi.</p>
                     </div>
                 </div>
                 <div class="col-md-4">

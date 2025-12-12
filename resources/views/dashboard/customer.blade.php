@@ -169,6 +169,190 @@
             justify-content: center;
             color: white;
         }
+
+        /* ========== MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px !important;
+            }
+
+            .navbar {
+                padding: 0.5rem 0;
+            }
+
+            .navbar-brand {
+                font-size: 0.95rem;
+            }
+
+            .navbar-brand i {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding-top: 70px !important;
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+
+            .welcome-emoji {
+                font-size: 1.5rem;
+            }
+
+            .row.align-items-center.mb-5 {
+                margin-bottom: 1rem !important;
+            }
+
+            .row.align-items-center.mb-5 h2 {
+                font-size: 1rem;
+                margin-bottom: 0 !important;
+            }
+
+            .row.align-items-center.mb-5 p {
+                font-size: 0.75rem;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .row.align-items-center.mb-5 .d-flex {
+                gap: 0.5rem !important;
+            }
+
+            .row.align-items-center.mb-5 .btn-lg {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .row.g-4.mb-5 {
+                --bs-gutter-y: 0.5rem;
+                --bs-gutter-x: 0.5rem;
+                margin-bottom: 1rem !important;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .stat-card .small {
+                font-size: 0.7rem;
+            }
+
+            .stat-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+
+            .stat-card .d-flex {
+                gap: 0.5rem !important;
+            }
+
+            .card-header {
+                padding: 0.75rem;
+                flex-direction: row;
+                gap: 0.5rem;
+            }
+
+            .card-header h5 {
+                font-size: 0.9rem;
+            }
+
+            .card-header .btn {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.7rem;
+            }
+
+            .card-body {
+                padding: 0.75rem;
+            }
+
+            .table th,
+            .table td {
+                padding: 0.4rem;
+                font-size: 0.75rem;
+            }
+
+            .table th:nth-child(3),
+            .table td:nth-child(3) {
+                display: none;
+            }
+
+            .avatar-circle {
+                width: 28px;
+                height: 28px;
+                font-size: 0.7rem;
+            }
+
+            .btn-outline-primary.btn-sm {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+            }
+
+            .badge {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding-top: 65px !important;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+
+            .welcome-emoji {
+                font-size: 1.25rem;
+            }
+
+            .row.align-items-center.mb-5 h2 {
+                font-size: 0.9rem;
+            }
+
+            .row.align-items-center.mb-5 .col-lg-8,
+            .row.align-items-center.mb-5 .col-lg-4 {
+                text-align: center;
+            }
+
+            .row.align-items-center.mb-5 .d-flex {
+                justify-content: center;
+            }
+
+            .row.align-items-center.mb-5 .btn-lg {
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+
+            .stat-card {
+                padding: 0.5rem;
+            }
+
+            .stat-card h3 {
+                font-size: 1rem;
+            }
+
+            .stat-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+
+            .table th:nth-child(2),
+            .table td:nth-child(2) {
+                display: none;
+            }
+
+            .card-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .card-header .btn {
+                width: 100%;
+            }
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -175,6 +175,239 @@
             color: var(--primary-color) !important;
             font-weight: 600;
         }
+
+        /* ========== MOBILE RESPONSIVE ========== */
+        @media (max-width: 991px) {
+            .order-layout {
+                position: relative;
+                top: 0;
+                min-height: calc(100vh - 70px);
+                padding-bottom: 280px;
+                /* Space for sticky cart */
+            }
+
+            .main-container {
+                height: auto;
+                overflow: visible;
+            }
+
+            .menu-column {
+                height: auto;
+                padding: 1rem;
+                overflow: visible;
+            }
+
+            .menu-scroll-area {
+                overflow: visible;
+                padding-right: 0;
+            }
+
+            .cart-column {
+                display: none;
+            }
+
+            .menu-header h3 {
+                font-size: 1.1rem;
+            }
+
+            .menu-header p {
+                font-size: 0.8rem;
+            }
+
+            .menu-header .btn {
+                padding: 0.35rem 0.75rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .order-layout {
+                padding-bottom: 260px;
+            }
+
+            .menu-column {
+                padding: 0.75rem;
+            }
+
+            .menu-header {
+                padding-bottom: 0.75rem;
+            }
+
+            .menu-header .d-flex {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .menu-header .btn {
+                width: 100%;
+            }
+
+            /* Compact menu cards for mobile grid */
+            .menu-item-card .card-body {
+                padding: 0.5rem !important;
+            }
+
+            .menu-item-card .menu-image,
+            .menu-item-card .menu-item-img,
+            .menu-item-card div[style*="width: 70px"] {
+                width: 50px !important;
+                height: 50px !important;
+            }
+
+            .menu-item-card h6 {
+                font-size: 0.75rem !important;
+                margin-bottom: 0.25rem !important;
+                line-height: 1.2;
+            }
+
+            .menu-item-card .menu-price {
+                font-size: 0.8rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .menu-item-card .category-badge {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.4rem;
+            }
+
+            .menu-item-card .card-footer {
+                padding: 0.35rem !important;
+            }
+
+            .menu-item-card .card-footer .btn {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.7rem;
+            }
+
+            .category-badge i {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .order-layout {
+                padding-bottom: 240px;
+            }
+
+            .menu-column {
+                padding: 0.5rem;
+            }
+
+            .menu-header h3 {
+                font-size: 1rem;
+            }
+
+            /* Extra compact on very small screens */
+            .menu-item-card .card-body {
+                padding: 0.4rem !important;
+            }
+
+            .menu-item-card .menu-image,
+            .menu-item-card .menu-item-img,
+            .menu-item-card div[style*="width: 70px"] {
+                width: 40px !important;
+                height: 40px !important;
+            }
+
+            .menu-item-card h6 {
+                font-size: 0.7rem !important;
+            }
+
+            .menu-item-card .menu-price {
+                font-size: 0.75rem !important;
+            }
+
+            .menu-item-card .card-footer .btn {
+                padding: 0.2rem 0.4rem;
+                font-size: 0.65rem;
+            }
+        }
+
+        /* ========== MOBILE STICKY CART ========== */
+        .mobile-cart {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 20px 20px 0 0;
+            z-index: 1000;
+            max-height: 280px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 991px) {
+            .mobile-cart {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .mobile-cart-header {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .mobile-cart-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.75rem;
+            max-height: 120px;
+        }
+
+        .mobile-cart-footer {
+            padding: 0.75rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-cart-footer .row {
+            margin-bottom: 0.5rem;
+        }
+
+        .mobile-cart-footer .form-control-sm {
+            font-size: 0.8rem;
+            padding: 0.35rem 0.5rem;
+        }
+
+        .mobile-cart-footer .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .mobile-cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.4rem 0.5rem;
+            background: var(--light-color);
+            border-radius: 8px;
+            margin-bottom: 0.4rem;
+            font-size: 0.8rem;
+        }
+
+        .mobile-cart-item .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .mobile-cart-item .qty-btn {
+            width: 24px;
+            height: 24px;
+            font-size: 0.65rem;
+        }
     </style>
 </head>
 
@@ -305,6 +538,42 @@
         </div>
     </div>
 
+    <!-- Mobile Sticky Cart (visible only on mobile) -->
+    <div class="mobile-cart" id="mobileCart">
+        <div class="mobile-cart-header" onclick="toggleMobileCartBody()">
+            <div>
+                <i class="fas fa-shopping-cart me-2"></i>
+                <span class="fw-bold">Keranjang</span>
+                <span class="badge bg-white text-primary ms-2" id="mobileCartCount">0</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <span class="fw-bold" id="mobileCartTotal">Rp 0</span>
+                <i class="fas fa-chevron-up" id="mobileCartChevron"></i>
+            </div>
+        </div>
+        <div class="mobile-cart-body" id="mobileCartBody">
+            <div class="text-center py-2 text-muted" id="mobileCartEmpty">
+                <small>Keranjang masih kosong</small>
+            </div>
+            <div id="mobileCartItems"></div>
+        </div>
+        <div class="mobile-cart-footer">
+            <div class="row g-2 mb-2">
+                <div class="col-6">
+                    <input type="date" class="form-control form-control-sm" id="mobilePickupDate"
+                        value="{{ now()->toDateString() }}">
+                </div>
+                <div class="col-6">
+                    <input type="time" class="form-control form-control-sm" id="mobilePickupTime"
+                        placeholder="Jam ambil">
+                </div>
+            </div>
+            <button onclick="checkoutMobile()" class="btn btn-primary w-100 fw-bold">
+                <i class="fas fa-check-circle me-1"></i> BUAT PESANAN
+            </button>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script>
@@ -331,27 +600,27 @@
             grid.innerHTML = data.map(item => {
                 const imageDisplay = item.image_url
                     ? `<img src="${item.image_url}" alt="${item.menu_name}" class="menu-item-img" 
-                           style="width: 70px; height: 70px; object-fit: cover; border-radius: 12px;"
+                           style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;"
                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                       <div class="menu-image" style="width: 70px; height: 70px; margin: 0 auto; display:none;"><i class="fas fa-utensils"></i></div>`
-                    : `<div class="menu-image" style="width: 70px; height: 70px; margin: 0 auto;"><i class="fas fa-utensils"></i></div>`;
+                       <div class="menu-image" style="width: 50px; height: 50px; margin: 0 auto; display:none;"><i class="fas fa-utensils"></i></div>`
+                    : `<div class="menu-image" style="width: 50px; height: 50px; margin: 0 auto;"><i class="fas fa-utensils"></i></div>`;
 
                 return `
-                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-3">
                     <div class="card h-100 border-0 shadow-sm menu-item-card" onclick='addToCart(${JSON.stringify(item)})' style="cursor:pointer">
-                        <div class="card-body text-center p-3">
-                            <div class="mb-3 d-flex justify-content-center">
+                        <div class="card-body text-center p-2">
+                            <div class="mb-2 d-flex justify-content-center">
                                 ${imageDisplay}
                             </div>
-                            <h6 class="fw-bold mb-2">${item.menu_name}</h6>
-                            <p class="menu-price mb-2">${formatRupiah(item.price)}</p>
-                            <span class="category-badge">
-                                <i class="fas fa-box me-1"></i> Stok: ${item.stock}
+                            <h6 class="fw-bold mb-1" style="font-size: 0.8rem; line-height: 1.2;">${item.menu_name}</h6>
+                            <p class="menu-price mb-1" style="font-size: 0.85rem;">${formatRupiah(item.price)}</p>
+                            <span class="category-badge" style="font-size: 0.65rem;">
+                                Stok: ${item.stock}
                             </span>
                         </div>
                         <div class="card-footer bg-transparent border-0 p-2 pt-0">
-                            <button class="btn btn-outline-primary btn-sm w-100">
-                                <i class="fas fa-plus me-1"></i> Tambah
+                            <button class="btn btn-outline-primary w-100" style="font-size: 0.7rem; padding: 0.25rem 0.5rem;">
+                                <i class="fas fa-plus me-1"></i>Tambah
                             </button>
                         </div>
                     </div>
@@ -397,6 +666,15 @@
 
             countBadge.textContent = itemCount;
 
+            // Update mobile cart as well
+            const mobileCountBadge = document.getElementById('mobileCartCount');
+            const mobileCartTotal = document.getElementById('mobileCartTotal');
+            const mobileCartItems = document.getElementById('mobileCartItems');
+            const mobileCartEmpty = document.getElementById('mobileCartEmpty');
+
+            if (mobileCountBadge) mobileCountBadge.textContent = itemCount;
+            if (mobileCartTotal) mobileCartTotal.textContent = formatRupiah(total);
+
             if (cart.length === 0) {
                 container.innerHTML = `
                     <div class="text-center py-4">
@@ -406,9 +684,17 @@
                     </div>
                 `;
                 document.getElementById('cartTotal').innerText = 'Rp 0';
+
+                // Mobile cart empty state
+                if (mobileCartEmpty) mobileCartEmpty.style.display = 'block';
+                if (mobileCartItems) mobileCartItems.innerHTML = '';
                 return;
             }
 
+            // Hide empty message on mobile
+            if (mobileCartEmpty) mobileCartEmpty.style.display = 'none';
+
+            // Desktop cart
             container.innerHTML = cart.map((item, index) => `
                 <div class="cart-item">
                     <div class="d-flex justify-content-between align-items-start mb-2">
@@ -433,7 +719,67 @@
                 </div>
             `).join('');
 
+            // Mobile cart items
+            if (mobileCartItems) {
+                mobileCartItems.innerHTML = cart.map((item, index) => `
+                    <div class="mobile-cart-item">
+                        <div>
+                            <span class="fw-bold">${item.menu_name}</span>
+                            <span class="text-muted ms-1">${formatRupiah(item.price * item.qty)}</span>
+                        </div>
+                        <div class="qty-controls">
+                            <button class="btn btn-outline-secondary qty-btn" onclick="updateQty(${index}, -1)">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span class="fw-bold px-1">${item.qty}</span>
+                            <button class="btn btn-outline-primary qty-btn" onclick="updateQty(${index}, 1)">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="btn btn-outline-danger qty-btn" onclick="removeItem(${index})">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
             document.getElementById('cartTotal').innerText = formatRupiah(total);
+        }
+
+        // Mobile cart toggle function
+        function toggleMobileCartBody() {
+            const body = document.getElementById('mobileCartBody');
+            const chevron = document.getElementById('mobileCartChevron');
+            if (body.style.display === 'none') {
+                body.style.display = 'block';
+                chevron.classList.remove('fa-chevron-down');
+                chevron.classList.add('fa-chevron-up');
+            } else {
+                body.style.display = 'none';
+                chevron.classList.remove('fa-chevron-up');
+                chevron.classList.add('fa-chevron-down');
+            }
+        }
+
+        // Mobile checkout function
+        async function checkoutMobile() {
+            if (cart.length === 0) {
+                showToast('Pilih menu terlebih dahulu!', 'warning');
+                return;
+            }
+
+            const time = document.getElementById('mobilePickupTime').value;
+            const date = document.getElementById('mobilePickupDate').value;
+
+            if (!time || !date) {
+                showToast('Lengkapi waktu pengambilan!', 'warning');
+                return;
+            }
+
+            // Use the same checkout logic
+            document.getElementById('pickupTime').value = time;
+            document.getElementById('pickupDate').value = date;
+            await checkout();
         }
 
         function updateQty(index, change) {
